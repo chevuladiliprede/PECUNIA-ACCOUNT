@@ -1,0 +1,36 @@
+<header class="jumbotron text-center ">
+  <h1>
+    
+    {{title}}</h1>
+    <div class="col-md-8 text-center">
+    <span *ngIf="!loginflag">
+      <a class="nav-item nav-link text-dark " routerLink="/login" class="btn btn-info">Login</a>
+    </span>
+
+      <span *ngIf="loginflag">
+        <span class="col-md-8 text-center">Hello {{userName|titlecase}}</span>&nbsp;&nbsp;&nbsp;
+        <a class="nav-item nav-link text-dark" routerLink="/login" class="btn btn-danger" (click)="logout()">Logout</a><br><br>
+     </span>
+    </div>
+</header>
+    
+    <nav class="col-md-10 mx-auto bg-dark p-2 row">
+    
+    <a class="nav-item nav-link text-white"  *ngIf="loginflag" routerLink="addaccount">Add Account</a><br><br>
+    
+    <a class="nav-item nav-link text-white"  *ngIf="loginflag" routerLink="addcustomer">Add Customer</a>
+    
+    
+    <!-- <a class="nav-item nav-link text-white" (click)="hideLogin()" routerlink-"upload">Upload Image</a>-->
+    
+    </nav>
+    <router-outlet></router-outlet>
+    
+    
+    
+     
+  
+  
+  
+  
+  
